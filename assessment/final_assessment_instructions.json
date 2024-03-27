@@ -1,0 +1,47 @@
+{
+    "assesments":[
+        {
+            "assesmentDescription":"DB Test.Order placed is reflecting in DB",
+            "find":".//test-method[@name='checkDbForOrder' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your JDBC Code, TestCase03!"     
+        },
+        {
+            "assesmentDescription":"DB Test.Foreign key constraint is checked!",
+            "find":".//test-method[@name='testOrderInsertAndCascadeDelete' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your JDBC Code, TestCase04!"               
+        },
+        {
+            "assesmentDescription":"DB Test.Number of tables in DB confirmed!",
+            "find":".//test-method[@name='testTableCount' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your JDBC Code, TestCase03!"               
+        },
+        {
+            "assesmentDescription":"API Test.Adding valid item to cart functional test",
+            "find":".//test-method[@name='addValidItemToCart' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your test bed!"
+        },
+        {
+            "assesmentDescription":"API Test.Adding Invalid item to cart negative test",
+            "find":".//test-method[@name='addInValidItemToCart' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your test bed!"
+        },
+        {
+            "assesmentDescription":"API Test.Adding a valid order functional test",
+            "find":".//test-method[@name='addAnOrder' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your test bed!"
+        },
+        {
+            "assesmentDescription":"API Test.Updating an order functional test",
+            "find":".//test-method[@name='checkOrder' and @status='PASS']",
+            "expectedCount":1,
+            "errorMessage":"Check your test bed!"
+        }
+    ]
+
+}

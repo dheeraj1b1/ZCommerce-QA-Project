@@ -1,0 +1,64 @@
+
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building a CLI application.
+    id 'application'
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:29.0-jre'
+
+    testImplementation 'io.rest-assured:rest-assured:5.2.0'
+
+    testImplementation 'io.rest-assured:json-schema-validator:4.3.3'
+    implementation 'org.json:json:20171018'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    
+    // Use TestNG framework, also requires calling test.useTestNG() below
+    testImplementation 'org.testng:testng:7.6.0'
+
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+}
+
+application {
+    // Define the main class for the application.
+    mainClassName = 'com.sdet.zorder.App'
+}
+buildDir = './tmp'
+test {
+    // Use TestNG for unit tests
+    useTestNG() {
+        suites './src/test/resources/testng.xml'
+        useDefaultListeners = true // generates the test report
+    }
+
+    afterSuite { desc, result ->
+            if (!desc.parent) {
+                println "\nTEST RESULT: ${result.resultType}"
+                println "TEST SUMMARY: RAN ${result.testCount} TESTS, " +
+                        "${result.successfulTestCount} SUCCEEDED, " +
+                        "${result.failedTestCount} FAILED, " +
+                        "${result.skippedTestCount} SKIPPED"
+            }
+    }
+
+    testLogging {
+		events "STANDARD_OUT"
+        exceptionFormat = 'short'
+	}
+
+    testLogging.showStandardStreams = true
+    test.outputs.upToDateWhen {false}
+
+}

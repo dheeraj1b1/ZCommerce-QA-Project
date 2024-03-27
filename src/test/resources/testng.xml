@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ZCommerce Suite">
+  <test name="Order Service API Tests">
+    <classes>
+      <class name="com.sdet.zorder.API_Tests.TestCase01"></class>
+      <class name="com.sdet.zorder.API_Tests.TestCase02"></class>
+    </classes>
+  </test>
+  <test name="Order Service DB Tests">
+    <classes>
+      <class name="com.sdet.zorder.DB_Tests.TestCase03"></class>
+      <class name="com.sdet.zorder.DB_Tests.TestCase04"></class>
+    </classes>
+  </test>
+</suite>

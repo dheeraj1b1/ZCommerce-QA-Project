@@ -1,0 +1,14 @@
+# Local files
+.gradle
+
+build
+
+.vscode
+
+tmp
+
+test.log
+
+*.class
+
+classes

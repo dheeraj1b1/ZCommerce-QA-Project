@@ -1,0 +1,13 @@
+# These are explicitly windows files and should use crlf
+*.bat           text eol=crlf
+__CRIO__/metadata.json merge=copy-merge
+
+# assesment/
+local/assesment/** merge=copy-merge
+
+# Root & local folder
+.gitattributes merge=copy-merge
+.gitignore merge=copy-merge
+local/run_assessment.sh merge=copy-merge
+local/run_platform_assessment.sh merge=copy-merge
+local/run_platform_assessment.bat merge=copy-merge
